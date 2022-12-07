@@ -1,6 +1,15 @@
 package com.cursoandroid.ph.epadocarefatored
 
 class Menu {
+    val listsFood = ListItemsFood()
+    val listsDrink = ListItemsDrink()
+    val listBread: MutableList<Item> = listsFood.listBreads()
+    val listSnacks: MutableList<Item> = listsFood.listSnacks()
+    val listCandies: MutableList<Item> = listsFood.listCandies()
+    val listCoffes: MutableList<Item> = listsDrink.listCoffes()
+    val listJuices: MutableList<Item> = listsDrink.listJuices()
+    val listVarious: MutableList<Item> = listsDrink.listVarious()
+    val listRequest: MutableList<Pair<Item, Int>> = mutableListOf()
     fun typeMenu () {
         var optionType = 1
         do {
@@ -36,7 +45,14 @@ class Menu {
                         0................Voltar
                     Opção:
                 """.trimIndent())
-                    optionCategory = readln().toInt()
+                    try {
+                        optionCategory = readln().toInt()
+                        if (optionCategory != 0) {
+                            foodMenu(optionCategory)
+                        }
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
                 }
                 2 -> {
                     println("""
@@ -47,10 +63,125 @@ class Menu {
                         0................Voltar
                     Opção:
                 """.trimIndent())
-                    optionCategory = readln().toInt()
+                    try {
+                        optionCategory = readln().toInt()
+                        if (optionCategory != 0) {
+                            drinkMenu(optionCategory)
+                        }
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
                 }
                 else -> println("Digite uma opção válida!")
             }
         } while (optionCategory != 0)
+    }
+
+    private fun foodMenu (category: Int) {
+        var option = 0
+        do {
+            when (category) {
+                1 -> {
+                    println("Digite sua opção:")
+                    listBread.forEach {
+                        println("""
+                            ${it.id} - ${it.name}................R$ ${it.price}
+                        """.trimIndent())
+                    }
+                    println("0 - Voltar")
+                    println("Opção:")
+                    try {
+                        option = readln().toInt()
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
+                }
+                2 -> {
+                    println("Digite sua opção:")
+                    listSnacks.forEach {
+                        println("""
+                            ${it.id} - ${it.name}................R$ ${it.price}
+                        """.trimIndent())
+                    }
+                    println("0 - Voltar")
+                    println("Opção:")
+                    try {
+                        option = readln().toInt()
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
+                }
+                3 -> {
+                    println("Digite sua opção:")
+                    listCandies.forEach {
+                        println("""
+                            ${it.id} - ${it.name}................R$ ${it.price}
+                        """.trimIndent())
+                    }
+                    println("0 - Voltar")
+                    println("Opção:")
+                    try {
+                        option = readln().toInt()
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
+                }
+                else -> println("Digite uma opção válida!")
+            }
+        } while (option != 0)
+    }
+
+    private fun drinkMenu (category: Int) {
+        var option = 0
+        do {
+            when (category) {
+                1 -> {
+                    println("Digite sua opção:")
+                    listCoffes.forEach {
+                        println("""
+                            ${it.id} - ${it.name}................R$ ${it.price}
+                        """.trimIndent())
+                    }
+                    println("0 - Voltar")
+                    println("Opção:")
+                    try {
+                        option = readln().toInt()
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
+                }
+                2 -> {
+                    println("Digite sua opção:")
+                    listJuices.forEach {
+                        println("""
+                            ${it.id} - ${it.name}................R$ ${it.price}
+                        """.trimIndent())
+                    }
+                    println("0 - Voltar")
+                    println("Opção:")
+                    try {
+                        option = readln().toInt()
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
+                }
+                3 -> {
+                    println("Digite sua opção:")
+                    listVarious.forEach {
+                        println("""
+                            ${it.id} - ${it.name}................R$ ${it.price}
+                        """.trimIndent())
+                    }
+                    println("0 - Voltar")
+                    println("Opção:")
+                    try {
+                        option = readln().toInt()
+                    } catch (e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
+                }
+                else -> println("Digite uma opção válida!")
+            }
+        } while (option != 0)
     }
 }
