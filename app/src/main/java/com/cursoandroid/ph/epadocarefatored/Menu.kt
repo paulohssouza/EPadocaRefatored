@@ -1,14 +1,6 @@
 package com.cursoandroid.ph.epadocarefatored
 
 class Menu {
-    val listsFood = ListItemsFood()
-    val listsDrink = ListItemsDrink()
-    val listBread: MutableList<Item> = listsFood.listBreads()
-    val listSnacks: MutableList<Item> = listsFood.listSnacks()
-    val listCandies: MutableList<Item> = listsFood.listCandies()
-    val listCoffes: MutableList<Item> = listsDrink.listCoffes()
-    val listJuices: MutableList<Item> = listsDrink.listJuices()
-    val listVarious: MutableList<Item> = listsDrink.listVarious()
     val listRequest: MutableList<Pair<Item, Int>> = mutableListOf()
     fun typeMenu () {
         var optionType = 1
@@ -83,26 +75,24 @@ class Menu {
             when (category) {
                 1 -> {
                     println("Digite sua opção:")
-                    listBread.forEach {
-                        println("""
-                            ${it.id} - ${it.name}................R$ ${it.price}
-                        """.trimIndent())
-                    }
-                    println("0 - Voltar")
-                    println("Opção:")
+                    println(ListItemsFood.FRENCHBREAD.toString())
+                    println(ListItemsFood.MILKBREAD.toString())
+                    println(ListItemsFood.CORNBREAD.toString())
+
+                println("0 - Voltar")
+                        println ("Opção:")
                     try {
-                        option = readln().toInt()
-                    } catch (e: NumberFormatException) {
-                        println("Digite uma opção válida!")
-                    }
+                    option = readln().toInt()
+                }
+                catch(e: NumberFormatException) {
+                    println("Digite uma opção válida!")
+                }
                 }
                 2 -> {
                     println("Digite sua opção:")
-                    listSnacks.forEach {
-                        println("""
-                            ${it.id} - ${it.name}................R$ ${it.price}
-                        """.trimIndent())
-                    }
+                    println(ListItemsFood.CHICKENSNACK.toString())
+                    println(ListItemsFood.ESFIRRA.toString())
+                    println(ListItemsFood.CHEESEBREAD.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -113,11 +103,9 @@ class Menu {
                 }
                 3 -> {
                     println("Digite sua opção:")
-                    listCandies.forEach {
-                        println("""
-                            ${it.id} - ${it.name}................R$ ${it.price}
-                        """.trimIndent())
-                    }
+                    println(ListItemsFood.CAROLINA.toString())
+                    println(ListItemsFood.BRIGADIER.toString())
+                    println(ListItemsFood.PUDDING.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -137,11 +125,9 @@ class Menu {
             when (category) {
                 1 -> {
                     println("Digite sua opção:")
-                    listCoffes.forEach {
-                        println("""
-                            ${it.id} - ${it.name}................R$ ${it.price}
-                        """.trimIndent())
-                    }
+                    println(ListItemsDrink.ESPRESSO.toString())
+                    println(ListItemsDrink.CAPPUCCINO.toString())
+                    println(ListItemsDrink.MACCHIATO.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -152,11 +138,9 @@ class Menu {
                 }
                 2 -> {
                     println("Digite sua opção:")
-                    listJuices.forEach {
-                        println("""
-                            ${it.id} - ${it.name}................R$ ${it.price}
-                        """.trimIndent())
-                    }
+                    println(ListItemsDrink.ORANGE.toString())
+                    println(ListItemsDrink.ACEROLA.toString())
+                    println(ListItemsDrink.LEMON.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -167,11 +151,9 @@ class Menu {
                 }
                 3 -> {
                     println("Digite sua opção:")
-                    listVarious.forEach {
-                        println("""
-                            ${it.id} - ${it.name}................R$ ${it.price}
-                        """.trimIndent())
-                    }
+                    println(ListItemsDrink.COCOA.toString())
+                    println(ListItemsDrink.MILK.toString())
+                    println(ListItemsDrink.TEA.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
