@@ -1,7 +1,7 @@
 package com.cursoandroid.ph.epadocarefatored
 
 class Menu {
-    val listRequest: MutableList<Pair<Item, Int>> = mutableListOf()
+    val request: Request = Request(mutableListOf())
     fun typeMenu () {
         var optionType = 1
         do {
@@ -31,10 +31,10 @@ class Menu {
                 1 -> {
                     println("""
                     Selecione sua opção de comida:
-                        1................Pães
-                        2................Salgados
-                        3................Doces
-                        0................Voltar
+                    1................Pães
+                    2................Salgados
+                    3................Doces
+                    0................Voltar
                     Opção:
                 """.trimIndent())
                     try {
@@ -49,10 +49,10 @@ class Menu {
                 2 -> {
                     println("""
                     Selecione sua opção de comida:
-                        1................Cafés
-                        2................Sucos
-                        3................Leites, chás e chocolates
-                        0................Voltar
+                    1................Cafés
+                    2................Sucos
+                    3................Leites, chás e chocolates
+                    0................Voltar
                     Opção:
                 """.trimIndent())
                     try {
@@ -75,24 +75,22 @@ class Menu {
             when (category) {
                 1 -> {
                     println("Digite sua opção:")
-                    println(ListItemsFood.FRENCHBREAD.toString())
-                    println(ListItemsFood.MILKBREAD.toString())
-                    println(ListItemsFood.CORNBREAD.toString())
-
-                println("0 - Voltar")
-                        println ("Opção:")
+                    println(ListItemsBreads.FRENCHBREAD.toString())
+                    println(ListItemsBreads.MILKBREAD.toString())
+                    println(ListItemsBreads.CORNBREAD.toString())
+                    println("0 - Voltar")
+                    println ("Opção:")
                     try {
-                    option = readln().toInt()
-                }
-                catch(e: NumberFormatException) {
-                    println("Digite uma opção válida!")
-                }
+                        option = readln().toInt()
+                    } catch(e: NumberFormatException) {
+                        println("Digite uma opção válida!")
+                    }
                 }
                 2 -> {
                     println("Digite sua opção:")
-                    println(ListItemsFood.CHICKENSNACK.toString())
-                    println(ListItemsFood.ESFIRRA.toString())
-                    println(ListItemsFood.CHEESEBREAD.toString())
+                    println(ListItemsSnacks.CHICKENSNACK.toString())
+                    println(ListItemsSnacks.ESFIRRA.toString())
+                    println(ListItemsSnacks.CHEESEBREAD.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -103,9 +101,9 @@ class Menu {
                 }
                 3 -> {
                     println("Digite sua opção:")
-                    println(ListItemsFood.CAROLINA.toString())
-                    println(ListItemsFood.BRIGADIER.toString())
-                    println(ListItemsFood.PUDDING.toString())
+                    println(ListItemsCandies.CAROLINA.toString())
+                    println(ListItemsCandies.BRIGADIER.toString())
+                    println(ListItemsCandies.PUDDING.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -125,9 +123,9 @@ class Menu {
             when (category) {
                 1 -> {
                     println("Digite sua opção:")
-                    println(ListItemsDrink.ESPRESSO.toString())
-                    println(ListItemsDrink.CAPPUCCINO.toString())
-                    println(ListItemsDrink.MACCHIATO.toString())
+                    println(ListItemsCoffee.ESPRESSO.toString())
+                    println(ListItemsCoffee.CAPPUCCINO.toString())
+                    println(ListItemsCoffee.MACCHIATO.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -138,9 +136,9 @@ class Menu {
                 }
                 2 -> {
                     println("Digite sua opção:")
-                    println(ListItemsDrink.ORANGE.toString())
-                    println(ListItemsDrink.ACEROLA.toString())
-                    println(ListItemsDrink.LEMON.toString())
+                    println(ListItemsJuices.ORANGE.toString())
+                    println(ListItemsJuices.ACEROLA.toString())
+                    println(ListItemsJuices.LEMON.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -151,9 +149,9 @@ class Menu {
                 }
                 3 -> {
                     println("Digite sua opção:")
-                    println(ListItemsDrink.COCOA.toString())
-                    println(ListItemsDrink.MILK.toString())
-                    println(ListItemsDrink.TEA.toString())
+                    println(ListItemsMilkTea.COCOA.toString())
+                    println(ListItemsMilkTea.MILK.toString())
+                    println(ListItemsMilkTea.TEA.toString())
                     println("0 - Voltar")
                     println("Opção:")
                     try {
@@ -166,4 +164,5 @@ class Menu {
             }
         } while (option != 0)
     }
+
 }
